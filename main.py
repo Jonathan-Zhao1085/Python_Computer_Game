@@ -71,16 +71,16 @@ class Menu:
 
     #render the character images on the sides of the screen
         #assign the file path of the red image to the varaible character_red_image
-        self.character_red_image = tk.PhotoImage(file="C:\\Summative_Game_Jonathan_Zhao\\stickmanrs.png").subsample(2)
+        self.character_red_image = tk.PhotoImage(file="C:\\stickmanrs.png").subsample(2)
         #make character_red_image located at x=900, y=400
         self.canvas.create_image(900, 400, image=self.character_red_image)
         #assign the file path of the blue image to the varaible character_blue_image
-        self.character_blue_image = tk.PhotoImage(file="C:\\Summative_Game_Jonathan_Zhao\\stickmanbs.png").subsample(2)
+        self.character_blue_image = tk.PhotoImage(file="C:\\stickmanbs.png").subsample(2)
         #make character_blue_image located at x=90, y=400
         self.canvas.create_image(90, 400, image=self.character_blue_image)
 
         #create a dictionary for players names and their scores
-        file = open("C:\\Summative_Game_Jonathan_Zhao\\Summative Game Score Keeper.txt", "r")
+        file = open("C:\\Score Keeper.txt", "r")
         sentence = file.readline()
         self.dictionary = {}
         List = sentence.split()
@@ -274,7 +274,7 @@ class Player_Entry:
             self.dictionary_string.strip()
 
         #write the modified dictionary string into the score keeper text file
-        file = open("C:\\Summative_Game_Jonathan_Zhao\\Summative Game Score Keeper.txt", "w")
+        file = open("C:\\Score Keeper.txt", "w")
         file.write(self.dictionary_string)
         file.close()
 
@@ -335,11 +335,11 @@ class Game:
         self.canvas.pack()
 
         #import the character normal and attack images from computer files
-        self.character_red_normal = tk.PhotoImage(file="C:\\Summative_Game_Jonathan_Zhao\\stickmanrs.png").subsample(3)
-        self.character_red_attack = tk.PhotoImage(file="C:\\Summative_Game_Jonathan_Zhao\\stickmanra.png").subsample(3)
+        self.character_red_normal = tk.PhotoImage(file="C:\\stickmanrs.png").subsample(3)
+        self.character_red_attack = tk.PhotoImage(file="C:\stickmanra.png").subsample(3)
 
-        self.character_blue_normal = tk.PhotoImage(file="C:\\Summative_Game_Jonathan_Zhao\\stickmanbs.png").subsample(3)
-        self.character_blue_attack = tk.PhotoImage(file="C:\\Summative_Game_Jonathan_Zhao\\stickmanba.png").subsample(3)
+        self.character_blue_normal = tk.PhotoImage(file="C:\\stickmanbs.png").subsample(3)
+        self.character_blue_attack = tk.PhotoImage(file="C:\\stickmanba.png").subsample(3)
 
         #load the images on screen
         self.red = self.canvas.create_image(self.redx, self.redy, image=self.character_red_normal)
@@ -582,7 +582,7 @@ class Game:
                     for key, value in self.dictionary.items():
                         self.dictionary_string += key + ":" + str(value) + " "
                         self.dictionary_string.strip()
-                    file = open("C:\\Summative_Game_Jonathan_Zhao\\Summative Game Score Keeper.txt", "w")
+                    file = open("C:\\Score Keeper.txt", "w")
                     file.write(self.dictionary_string)
                     file.close()
                     quit()
@@ -599,7 +599,7 @@ class Game:
                     for key, value in self.dictionary.items():
                         self.dictionary_string += key + ":" + str(value) + " "
                         self.dictionary_string.strip()
-                    file = open("C:\\Summative_Game_Jonathan_Zhao\\Summative Game Score Keeper.txt", "w")
+                    file = open("C:\\Score Keeper.txt", "w")
                     file.write(self.dictionary_string)
                     file.close()
                     quit()
